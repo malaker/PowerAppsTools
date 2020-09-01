@@ -1,12 +1,12 @@
 # Motivation
 
-In the moment of implementing existing Powershell module  Microsoft.PowerApps.Checker.PowerShell does not implement confidential client flow. This library implements confidential client flow. It calls powerapps checker web api - https://docs.microsoft.com/en-us/power-platform/alm/checker-api/overview
+In the moment of implementing existing Powershell module  Microsoft.PowerApps.Checker.PowerShell does not implement client credential flow. This library implements client credential flow. It calls powerapps checker web api - https://docs.microsoft.com/en-us/power-platform/alm/checker-api/overview
 
 For teams who are in need of automation CI/CD pipeline introducing static analysis of powerapp / dynamics 365 solution is great benefit. It quickly identifies problematic patterns and prevent introducing to solution legacy patterns or deprecated API etc.
 
 # What it does 
 
-Library allows to call PowerApps Checker Web Api and make static analysis of power app solution including Dynamics 365 solution. Implements OAuth Confidential client flow. It is possible to use client secret or client certificate.
+Library allows to call PowerApps Checker Web Api and make static analysis of power app solution including Dynamics 365 solution. Implements OAuth client credential flow It is possible to use client secret or client certificate.
 
 # What is needed
 

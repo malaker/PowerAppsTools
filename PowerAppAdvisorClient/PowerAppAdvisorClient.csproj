@@ -3,6 +3,21 @@
   <PropertyGroup>
     <TargetFramework>netstandard1.6</TargetFramework>
     <RootNamespace> Malaker.PowerAppsTools.PowerAppAdvisorClient</RootNamespace>
+    <PackOnBuild>true</PackOnBuild>
+    <PackageVersion>1.0.0.0</PackageVersion>
+    <Authors>Krzysztof Balcerowski</Authors>
+    <Copyright>Krzysztof Balcerowski</Copyright>
+    <PackageLicenseUrl>https://github.com/malaker/PowerAppsTools/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/malaker/PowerAppsTools</PackageProjectUrl>
+    <PackageReleaseNotes>In the moment of implementing existing Powershell module Microsoft.PowerApps.Checker.PowerShell does not implement client credential flow. This library implements client credential flow. It calls powerapps checker web api - https://docs.microsoft.com/en-us/power-platform/alm/checker-api/overview
+
+For teams who are in need of automation CI/CD pipeline introducing static analysis of powerapp / dynamics 365 solution is great benefit. It quickly identifies problematic patterns and prevent introducing to solution legacy patterns or deprecated API etc.</PackageReleaseNotes>
+    <Title>PowerAppsTools PowerAppAdvisorClient</Title>
+    <Description>In the moment of implementing existing Powershell module Microsoft.PowerApps.Checker.PowerShell does not implement client credential flow. This library implements cliend credential flow. It calls powerapps checker web api - https://docs.microsoft.com/en-us/power-platform/alm/checker-api/overview
+
+For teams who are in need of automation CI/CD pipeline introducing static analysis of powerapp / dynamics 365 solution is great benefit. It quickly identifies problematic patterns and prevent introducing to solution legacy patterns or deprecated API etc.</Description>
+    <PackageId>Malaker.PowerAppsTools.PowerAppAdvisorClient</PackageId>
+    <PackageTags>Dynamics 365 PowerApps analysis</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
