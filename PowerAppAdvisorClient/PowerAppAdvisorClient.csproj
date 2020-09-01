@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.6</TargetFramework>
+    <RootNamespace> Malaker.PowerAppsTools.PowerAppAdvisorClient</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Identity.Client" Version="4.17.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="Documentation\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PowerApps.Common\Common.csproj" />
+  </ItemGroup>
+</Project>
