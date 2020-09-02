@@ -62,19 +62,20 @@ using(var fs = File.Open(fullPathToManagedSolution,FileMode.Open)){
 
 //calling powerapps checker web api
 //initialize correlationId
-Guid correlationID = Guid.NewGuid();
 
-var uploadReqResponse = await client.UploadSolution(managedSolution,"<solutionName>",tenantId, correlationId);
+Guid correlationId = Guid.NewGuid();
 
-var analysisInvokationResult = await client.InvokeAnalysis(uploadReqResponse,tenantId,correlationId);
+var uploadReqResponse = await client.UploadSolution(managedSolution, "Test", tenantId, correlationId, CancellationToken.None);
+
+var analysisInvokationResult = await client.InvokeAnalysis(uploadReqResponse, CancellationToken.None);
 
 //in the loop
-var analysisStatus = await client.CheckAnalysis(tenantId,correlationId);
+var analysisStatus = await client.CheckAnalysis(tenantId, correlationId, CancellationToken.None);
 
 do
 {
-    analysisStatus = await client.CheckAnalysis(tenantId, correlationId, default); 
+    analysisStatus = await client.CheckAnalysis(tenantId, correlationId, default);
 
-} while ( analysisStatus.Progress!=100 );
+} while (analysisStatus.Progress != 100);
 
 ```
