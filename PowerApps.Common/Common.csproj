@@ -4,7 +4,7 @@
     <TargetFramework>netstandard1.6</TargetFramework>
     <RootNamespace>Malaker.PowerAppsTools.Common</RootNamespace>
     <PackageId>Malaker.PowerAppsTools.Common</PackageId>
-    <PackageVersion>1.0.0.0</PackageVersion>
+    <PackageVersion>1.0.0.1</PackageVersion>
     <Authors>Krzysztof Balcerowski</Authors>
     <Copyright>Krzysztof Balcerowski</Copyright>
     <PackageLicenseUrl>https://github.com/malaker/PowerAppsTools/blob/master/LICENSE</PackageLicenseUrl>
@@ -12,6 +12,7 @@
     <PackageProjectUrl>https://github.com/malaker/PowerAppsTools</PackageProjectUrl>
     <PackageTags>powerapps dynamics365 onlinemanagementapi powerappsadvisor</PackageTags>
     <Description>Common things used by Malaker.PowerAppsTools.PowerAppAdvisorClient and others in the future. It contains abstracts and interfaces</Description>
+    <PackOnBuild>true</PackOnBuild>
   </PropertyGroup>
 
   <ItemGroup>

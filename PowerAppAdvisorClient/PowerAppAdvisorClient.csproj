@@ -4,12 +4,11 @@
     <TargetFramework>netstandard1.6</TargetFramework>
     <RootNamespace> Malaker.PowerAppsTools.PowerAppAdvisorClient</RootNamespace>
     <PackOnBuild>true</PackOnBuild>
-    <PackageVersion>1.0.0.2</PackageVersion>
+    <PackageVersion>1.0.0.3</PackageVersion>
     <Authors>Krzysztof Balcerowski</Authors>
     <Copyright>Krzysztof Balcerowski</Copyright>
     <PackageLicenseUrl>https://github.com/malaker/PowerAppsTools/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/malaker/PowerAppsTools</PackageProjectUrl>
-    <PackageReleaseNotes>introducing client interface for using powerapp checker</PackageReleaseNotes>
     <Title>PowerAppsTools PowerAppAdvisorClient</Title>
     <Description>In the moment of implementing existing Powershell module Microsoft.PowerApps.Checker.PowerShell does not implement client credential flow. This library implements cliend credential flow. It calls powerapps checker web api - https://docs.microsoft.com/en-us/power-platform/alm/checker-api/overview
 
@@ -21,6 +20,7 @@ For teams who are in need of automation CI/CD pipeline introducing static analys
   <ItemGroup>
     <PackageReference Include="Microsoft.Identity.Client" Version="4.17.1" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Malaker.PowerAppsTools.Common" Version="1.0.0.1" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
