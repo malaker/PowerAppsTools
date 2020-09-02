@@ -15,12 +15,12 @@
     public class ClientTests
     {
         private Mock<HttpClient> _httpClientMoq;
-        private Client _sut;
+        private IPowerAppAdvisorClient _sut;
 
         public ClientTests()
         {
             this._httpClientMoq = new Mock<HttpClient>();
-            this._sut = new Client(_httpClientMoq.Object);
+            this._sut = new AdvisorClient(_httpClientMoq.Object);
         }
 
         [Fact]

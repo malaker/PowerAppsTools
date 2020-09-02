@@ -4,8 +4,9 @@
     using System.Linq;
     using System.Net.Http;
     using System.Text;
+    using Malaker.PowerAppsTools.Common.Interfaces;
 
-    public abstract class PowerAppAdivsorMessage : Message
+    public abstract class PowerAppAdivsorMessage : PowerAppMessage
     {
         protected string _tenantId;
         protected Guid _correlationId;

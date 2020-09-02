@@ -14,7 +14,7 @@
             this._builder = builder;
         }
 
-        public Client Create(ClientSettings clientSettings)
+        public IPowerAppAdvisorClient Create(ClientSettings clientSettings)
         {
             _builder.Create(clientSettings.ClientId);
 
@@ -33,7 +33,7 @@
             var httpClient = new HttpClientFactory().Create(new OAuthMessageHandler(app, clientSettings.Scopes));
             httpClient.BaseAddress = new Uri(clientSettings.BaseAddress);
 
-            return new Client(httpClient);
+            return new AdvisorClient(httpClient);
         }
     }
 }

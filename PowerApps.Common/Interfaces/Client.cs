@@ -1,16 +1,11 @@
-﻿namespace Malaker.PowerAppsTools.PowerAppAdvisorClient
+﻿namespace Malaker.PowerAppsTools.Common.Interfaces
 {
-    using System;
     using System.Net.Http;
     using System.Threading;
     using System.Threading.Tasks;
-    using Common.Interfaces;
-    using Malaker.PowerAppsTools.Common;
-    using Malaker.PowerAppsTools.PowerAppAdvisorClient.Exceptions;
-    using Malaker.PowerAppsTools.PowerAppAdvisorClient.Models;
-    using Microsoft.Identity.Client;
+    using Malaker.PowerAppsTools.Common.Exceptions;
 
-    public class Client
+    public abstract class Client
     {
         
         HttpClient _httpCLient;
@@ -28,7 +23,7 @@
             _httpCLient = httpCLient;
         }
 
-        public async Task<HttpResponseMessage> ExecuteAsync(PowerAppAdivsorMessage message, CancellationToken cancellationToken)
+        protected virtual async Task<HttpResponseMessage>  ExecuteAsync(PowerAppMessage message, CancellationToken cancellationToken)
         {
             var response = await this._httpCLient.SendAsync(message.GetHttpMessageRequest(), cancellationToken);
 
