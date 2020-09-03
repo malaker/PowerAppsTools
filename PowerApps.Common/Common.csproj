@@ -13,6 +13,7 @@
     <PackageTags>powerapps dynamics365 onlinemanagementapi powerappsadvisor</PackageTags>
     <Description>Common things used by Malaker.PowerAppsTools.PowerAppAdvisorClient and others in the future. It contains abstracts and interfaces</Description>
     <PackOnBuild>true</PackOnBuild>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
