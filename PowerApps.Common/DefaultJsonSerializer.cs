@@ -1,6 +1,10 @@
+    using Newtonsoft.Json;
+
 namespace Malaker.PowerAppsTools.Common
 {
     using Interfaces;
+
+
     public class DefaultJsonSerializer : JsonSerializer
     {
         public override object Deserialize(string content)
@@ -15,7 +19,7 @@ namespace Malaker.PowerAppsTools.Common
 
         public override string Serialize(object @object)
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(@object);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(@object, new JsonSerializerSettings(){NullValueHandling = NullValueHandling.Ignore});
         }
     }
 }

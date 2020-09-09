@@ -33,8 +33,8 @@
             if (!response.IsSuccessStatusCode)
             {
                 string content = await response?.Content.ReadAsStringAsync() ?? string.Empty;
-
-                throw new ApiCallFailedException($"{(int)response.StatusCode}-{response.StatusCode.ToString()} - content - {content} - reason {response.ReasonPhrase}");
+                
+                throw new ApiCallFailedException($"{(int)response.StatusCode}-{response.StatusCode.ToString()} - content - {content} - reason {response.ReasonPhrase}",response);
             }
 
             return response;

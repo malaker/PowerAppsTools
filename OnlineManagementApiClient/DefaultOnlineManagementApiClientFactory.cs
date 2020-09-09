@@ -37,10 +37,18 @@ namespace Malaker.PowerAppsTools.OnlineManagementApiClient
             var app = _builder.Build();
             var httpClient = new HttpClientFactory().Create(new OAuthMessageHandler(app, clientSettings.Scopes));
             httpClient.BaseAddress = new Uri($"{clientSettings.BaseAddress}/api/v{clientSettings.ApiVersion}/");
-
+            var jsonDeserializer = new DefaultJsonSerializer();
             return new XrmOnlineManagementApiClient(new List<IPowerAppRequestHandler>()
             {
-                new GetInstancesRequestHandler(httpClient, new DefaultJsonSerializer())
+                new GetInstancesRequestHandler(httpClient, jsonDeserializer),
+                new GetCurrenciesRequestHandler(httpClient, jsonDeserializer),
+                new GetOperationStatusRequestHandler(httpClient, jsonDeserializer),
+                new CopyRequestHandler(httpClient, jsonDeserializer),
+                new ResetInstanceRequestHandler(httpClient, jsonDeserializer),
+                new RestoreInstanceRequestHandler(httpClient, jsonDeserializer),
+                new BackupInstanceRequestHandler(httpClient, jsonDeserializer),
+                new GetInstanceBackupsRequestHandler(httpClient,jsonDeserializer)
+
             });
         }
     }
