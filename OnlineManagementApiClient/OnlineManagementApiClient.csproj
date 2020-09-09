@@ -7,5 +7,20 @@
   <PropertyGroup>
     <TargetFramework>netstandard1.6</TargetFramework>
     <RootNamespace>Malaker.PowerAppsTools.OnlineManagementApiClient</RootNamespace>
+    <PackOnBuild>true</PackOnBuild>
+    <PackageId>Malaker.PowerAppsTools.OnlineManagementApiClient</PackageId>
+    <PackageVersion>1.0.0.1</PackageVersion>
+    <Authors>Krzysztof Balcerowski</Authors>
+    <Copyright>Krzysztof Balcerowski</Copyright>
+    <PackageLicenseUrl>https://github.com/malaker/PowerAppsTools/blob/master/LICENSE</PackageLicenseUrl>
+    <Owners>Krzysztof Balcerowski</Owners>
+    <PackageProjectUrl>https://github.com/malaker/PowerAppsTools</PackageProjectUrl>
+    <Description>Online Management API is a REST API that lets you create and manage Common Data Service environments in your Office 365 tenant. 
+
+This library allows to call REST API of Online Management API with client credential flow</Description>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Malaker.PowerAppsTools.Common" Version="1.0.0.2" />
+  </ItemGroup>
 </Project>

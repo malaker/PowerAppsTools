@@ -134,7 +134,7 @@ var client =  DefaultOnlineManagementApiClientFactory.Instance.Create(
 //using certificate
 X509Certificate2 certificate = ... // load certificate from store or file
 
-client =  DefaultClientFactory.Instance.Create(
+client =  DefaultOnlineManagementApiClientFactory.Instance.Create(
             new XrmClientSettings()
             {
                 TenantId = tenantId,
