@@ -8,6 +8,11 @@ namespace Malaker.PowerAppsTools.Common
             return Newtonsoft.Json.JsonConvert.DeserializeObject(content);
         }
 
+        public override T Deserialize<T>(string content)
+        {
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(content);
+        }
+
         public override string Serialize(object @object)
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(@object);

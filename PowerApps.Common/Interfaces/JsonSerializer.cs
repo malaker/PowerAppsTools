@@ -1,3 +1,5 @@
+using System;
+
 namespace Malaker.PowerAppsTools.Common.Interfaces
 {
     public abstract class JsonSerializer
@@ -10,6 +12,4 @@ namespace Malaker.PowerAppsTools.Common.Interfaces
             return (T)Deserialize(content);
         }
     }
-
-
 }

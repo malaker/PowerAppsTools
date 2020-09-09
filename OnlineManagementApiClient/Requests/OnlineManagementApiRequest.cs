@@ -4,5 +4,8 @@ namespace Malaker.PowerAppsTools.OnlineManagementApiClient.Requests
 {
     public abstract class OnlineManagementApiRequest<TResponse> : PowerAppRequest<TResponse>
     {
+        public OnlineManagementApiRequest()
+        {
+        }
     }
 }

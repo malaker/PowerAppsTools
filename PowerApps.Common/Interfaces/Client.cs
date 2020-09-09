@@ -34,7 +34,7 @@
             {
                 string content = await response?.Content.ReadAsStringAsync() ?? string.Empty;
 
-                throw new ApiCallFailedException($"{(int)response.StatusCode}-{response.StatusCode.ToString()} - content - {content}");
+                throw new ApiCallFailedException($"{(int)response.StatusCode}-{response.StatusCode.ToString()} - content - {content} - reason {response.ReasonPhrase}");
             }
 
             return response;

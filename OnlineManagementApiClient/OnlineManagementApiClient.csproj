@@ -8,5 +8,4 @@
     <TargetFramework>netstandard1.6</TargetFramework>
     <RootNamespace>Malaker.PowerAppsTools.OnlineManagementApiClient</RootNamespace>
   </PropertyGroup>
-
 </Project>

@@ -16,8 +16,7 @@ namespace Malaker.PowerAppsTools.Common.Interfaces
 
 
     }
-
-
+    
     public abstract class PowerAppRequest<TResponse> : PowerAppRequest
     {
     }

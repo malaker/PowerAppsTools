@@ -1,14 +1,20 @@
+using System;
+using Newtonsoft.Json;
+
 namespace Malaker.PowerAppsTools.OnlineManagementApiClient.Models
 {
     public class Instance
     {
+
         public string Id { get; set; }
+
 
         public string UniqueName { get; set; }
 
         public string Version { get; set; }
 
         public string ApplicationUrl { get; set; }
+
         public bool StateIsSupportedForDelete { get; set; }
 
         public bool AdminMode { get; set; }
@@ -16,6 +22,8 @@ namespace Malaker.PowerAppsTools.OnlineManagementApiClient.Models
         public bool IsLocked { get; set; }
 
         public string ApiUrl { get; set; }
+
+        public string State { get; set; }
 
         public string FriendlyName { get; set; }
 
@@ -27,6 +35,12 @@ namespace Malaker.PowerAppsTools.OnlineManagementApiClient.Models
 
         public string InitialUserEmail { get; set; }
 
-        public string SecurityGroupId { get; set; }
+        public Guid SecurityGroupId { get; set; }
+
+        public string ProtectionStatus { get; set; }
+
+        public string Type { get; set; }
+
+        public string Purpose { get; set; }
     }
 }
