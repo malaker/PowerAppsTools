@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace Malaker.PowerAppsTools.Common.Interfaces
 {
-    public abstract class PowerAppMessage
+    public abstract class PowerAppRequest
     {
         [JsonIgnore()]
         public abstract HttpMethod Method { get; }
@@ -14,6 +14,10 @@ namespace Malaker.PowerAppsTools.Common.Interfaces
         [JsonIgnore()]
         public Dictionary<string, string> Headers = new Dictionary<string, string>();
 
-        public abstract HttpRequestMessage GetHttpMessageRequest();
+
+    }
+    
+    public abstract class PowerAppRequest<TResponse> : PowerAppRequest
+    {
     }
 }

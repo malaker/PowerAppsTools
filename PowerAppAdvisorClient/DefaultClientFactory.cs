@@ -33,7 +33,7 @@
             var httpClient = new HttpClientFactory().Create(new OAuthMessageHandler(app, clientSettings.Scopes));
             httpClient.BaseAddress = new Uri(clientSettings.BaseAddress);
 
-            return new AdvisorClient(httpClient);
+            return new AdvisorClient(httpClient, new DefaultJsonSerializer());
         }
     }
 }

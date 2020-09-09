@@ -11,8 +11,28 @@
 
     public class AdvisorClient : Client, IPowerAppAdvisorClient
     {
-        public AdvisorClient(HttpClient httpCLient) : base(httpCLient)
+        public AdvisorClient(HttpClient httpCLient, JsonSerializer serializer) : base(httpCLient, serializer)
         {
+        }
+
+
+        protected override HttpRequestMessage GetHttpMessageRequest(PowerAppRequest request)
+        {
+
+            if (request is UploadMessage)
+            {
+                UploadMessage msg = request as UploadMessage;
+
+                var req = base.GetHttpMessageRequest(request);
+                req.Content = msg.MultipartFormDataContent;
+                return req;
+
+            }
+            else
+            {
+
+                return base.GetHttpMessageRequest(request);
+            }
         }
 
         public async Task<CheckAnalysisResponse> CheckAnalysis(string tenantId, Guid correlationId, CancellationToken cancellationToken)
@@ -23,7 +43,7 @@
 
             string respnseMsg = await response.Content.ReadAsStringAsync();
 
-            var resp = Newtonsoft.Json.JsonConvert.DeserializeObject<CheckAnalysisResponse>(respnseMsg);
+            var resp = this._jsonSerializer.Deserialize<CheckAnalysisResponse>(respnseMsg);
 
             return resp;
         }
@@ -55,7 +75,7 @@
 
             string respnseMsg = await response.Content.ReadAsStringAsync();
 
-            var resp = Newtonsoft.Json.JsonConvert.DeserializeObject<string[]>(respnseMsg);
+            var resp = this._jsonSerializer.Deserialize<string[]>(respnseMsg);
 
             return new UploadMessageResponse(resp, tenantId, corrId);
         }

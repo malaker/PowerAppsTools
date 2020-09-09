@@ -1,11 +1,12 @@
-﻿namespace Malaker.PowerAppsTools.PowerAppAdvisorClient
+using System.Security.Cryptography.X509Certificates;
+
+namespace Malaker.PowerAppsTools.OnlineManagementApiClient
 {
-    using System.Security.Cryptography.X509Certificates;
-
-
-    public class ClientSettings
+    public class XrmClientSettings
     {
-        public string BaseAddress { get; set; } = "https://europe.api.advisor.powerapps.com";
+        public string BaseAddress { get; set; } = "https://admin.services.crm4.dynamics.com";
+
+        public string ApiVersion = "1.4";
 
         public string ClientId { get; set; }
 

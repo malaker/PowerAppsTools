@@ -15,12 +15,16 @@
     public class ClientTests
     {
         private Mock<HttpClient> _httpClientMoq;
+        private Mock<Malaker.PowerAppsTools.Common.Interfaces.JsonSerializer> _jsonSerializer;
         private IPowerAppAdvisorClient _sut;
 
         public ClientTests()
         {
             this._httpClientMoq = new Mock<HttpClient>();
-            this._sut = new AdvisorClient(_httpClientMoq.Object);
+            this._jsonSerializer = new Mock<Malaker.PowerAppsTools.Common.Interfaces.JsonSerializer>();
+            _jsonSerializer.CallBase = true;
+            this._jsonSerializer.Setup(m => m.Serialize(It.IsAny<object>())).Returns("");
+            this._sut = new AdvisorClient(_httpClientMoq.Object, _jsonSerializer.Object);
         }
 
         [Fact]
@@ -32,7 +36,9 @@
 
             this._httpClientMoq.Setup(m => m.SendAsync(It.IsAny<HttpRequestMessage>(), It.IsAny<CancellationToken>())).Returns(Task.FromResult(expectedResponse));
 
-            var result = await _sut.UploadSolution(new byte[24] , "test", Guid.NewGuid().ToString(), Guid.NewGuid(), default);
+            this._jsonSerializer.Setup(m => m.Deserialize(It.IsAny<string>())).Returns(expectedOutput);
+
+            var result = await _sut.UploadSolution(new byte[24], "test", Guid.NewGuid().ToString(), Guid.NewGuid(), default);
 
             Assert.Equal(expectedOutput, result.SasUriList);
         }
@@ -43,13 +49,13 @@
         {
             string tenantId = Guid.NewGuid().ToString();
             Guid correlationId = Guid.NewGuid();
-            string[] sasUrls = new string[] { "1"};
+            string[] sasUrls = new string[] { "1" };
 
-            var expectedResponse = new HttpResponseMessage() { Content = new StringContent("",System.Text.Encoding.UTF8, "application/json") };
-            expectedResponse.Headers.Add("Location",sasUrls);
+            var expectedResponse = new HttpResponseMessage() { Content = new StringContent("", System.Text.Encoding.UTF8, "application/json") };
+            expectedResponse.Headers.Add("Location", sasUrls);
             this._httpClientMoq.Setup(m => m.SendAsync(It.IsAny<HttpRequestMessage>(), It.IsAny<CancellationToken>())).Returns(Task.FromResult(expectedResponse));
 
-            var result = await _sut.InvokeAnalysis(new UploadMessageResponse(sasUrls,tenantId,correlationId), default);
+            var result = await _sut.InvokeAnalysis(new UploadMessageResponse(sasUrls, tenantId, correlationId), default);
 
             Assert.Equal(sasUrls, result.Location);
         }
@@ -66,6 +72,7 @@
             var expectedResponse = new HttpResponseMessage() { Content = new StringContent(JsonConvert.SerializeObject(expected), System.Text.Encoding.UTF8, "application/json") };
 
             this._httpClientMoq.Setup(m => m.SendAsync(It.IsAny<HttpRequestMessage>(), It.IsAny<CancellationToken>())).Returns(Task.FromResult(expectedResponse));
+            this._jsonSerializer.Setup(m => m.Deserialize(It.IsAny<string>())).Returns(expected);
 
             var result = await _sut.CheckAnalysis(tenantId, correlationId, default);
 

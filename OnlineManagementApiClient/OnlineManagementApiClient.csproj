@@ -1,8 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <ItemGroup>
+    <ProjectReference Include="..\PowerApps.Common\Common.csproj" />
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>netstandard1.6</TargetFramework>
     <RootNamespace>Malaker.PowerAppsTools.OnlineManagementApiClient</RootNamespace>
   </PropertyGroup>
-
 </Project>

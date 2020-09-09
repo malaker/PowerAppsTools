@@ -4,25 +4,18 @@
     using System.IO;
     using System.Net.Http;
 
-    public class UploadMessage : PowerAppAdivsorMessage
+    public class UploadMessage : PowerAppAdivsorRequest
     {
         public UploadMessage(byte[] managedSolution, string solutionName, string tenantId, Guid correlationId) : base(tenantId, correlationId)
         {
-            _form = new MultipartFormDataContent();
-            _form.Add(new ByteArrayContent(managedSolution, 0, managedSolution.Length), $"{solutionName}", $"{solutionName}.zip");
-        }
-
-        public override HttpRequestMessage GetHttpMessageRequest()
-        {
-            var req = base.GetHttpMessageRequest();
-            req.Content = _form;
-            return req;
+            MultipartFormDataContent = new MultipartFormDataContent();
+            MultipartFormDataContent.Add(new ByteArrayContent(managedSolution, 0, managedSolution.Length), $"{solutionName}", $"{solutionName}.zip");
         }
 
         public override HttpMethod Method => HttpMethod.Post;
 
         public override string RequestUri => "api/upload";
 
-        MultipartFormDataContent _form;
+        public MultipartFormDataContent MultipartFormDataContent { get; set; }
     }
 }

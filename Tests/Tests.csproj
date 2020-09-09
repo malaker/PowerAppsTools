@@ -19,5 +19,6 @@
   <ItemGroup>
     <ProjectReference Include="..\PowerApps.Common\Common.csproj" />
     <ProjectReference Include="..\PowerAppAdvisorClient\PowerAppAdvisorClient.csproj" />
+    <ProjectReference Include="..\OnlineManagementApiClient\OnlineManagementApiClient.csproj" />
   </ItemGroup>
 </Project>
