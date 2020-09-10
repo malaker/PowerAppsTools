@@ -16,7 +16,12 @@
         public X509Certificate2 Certificate { get; set; }
 
         public string Authority { get; set; }
-
+        
+        /// <summary>
+        /// Optional in client credential flow Redirect Uri is optional
+        /// https://docs.microsoft.com/en-us/dotnet/api/microsoft.identity.client.applicationoptions.redirecturi?view=azure-dotnet
+        /// </summary>
+        /// <value></value>
         public string RedirectUri { get; set; }
 
         public string[] Scopes { get; set; }

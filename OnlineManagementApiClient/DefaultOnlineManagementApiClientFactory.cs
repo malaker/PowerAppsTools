@@ -34,6 +34,14 @@ namespace Malaker.PowerAppsTools.OnlineManagementApiClient
             }
 
             _builder.WithRedirectUri(clientSettings.RedirectUri).WithTenantId(clientSettings.TenantId);
+            
+            if (!string.IsNullOrEmpty(clientSettings.RedirectUri))
+            {
+                _builder.WithRedirectUri(clientSettings.RedirectUri);
+            }
+
+             _builder.WithTenantId(clientSettings.TenantId);
+            
             var app = _builder.Build();
             var httpClient = new HttpClientFactory().Create(new OAuthMessageHandler(app, clientSettings.Scopes));
             httpClient.BaseAddress = new Uri($"{clientSettings.BaseAddress}/api/v{clientSettings.ApiVersion}/");

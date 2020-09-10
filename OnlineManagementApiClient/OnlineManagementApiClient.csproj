@@ -9,7 +9,7 @@
     <RootNamespace>Malaker.PowerAppsTools.OnlineManagementApiClient</RootNamespace>
     <PackOnBuild>true</PackOnBuild>
     <PackageId>Malaker.PowerAppsTools.OnlineManagementApiClient</PackageId>
-    <PackageVersion>1.0.0.3</PackageVersion>
+    <PackageVersion>1.0.0.4</PackageVersion>
     <Authors>Krzysztof Balcerowski</Authors>
     <Copyright>Krzysztof Balcerowski</Copyright>
     <PackageLicenseUrl>https://github.com/malaker/PowerAppsTools/blob/master/LICENSE</PackageLicenseUrl>
