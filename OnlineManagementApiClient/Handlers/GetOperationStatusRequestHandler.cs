@@ -6,7 +6,7 @@ namespace Malaker.PowerAppsTools.OnlineManagementApiClient.Handlers
     using Models;
     using Requests;
 
-    public class GetOperationStatusRequestHandler : OnlineManagementApiClientWithOperationStatusRequestHandler<CopyRequest, OperationStatus>
+    public class GetOperationStatusRequestHandler : OnlineManagementApiClientWithOperationStatusRequestHandler<GetOperationStatus, OperationStatus>
     {
         public GetOperationStatusRequestHandler(HttpClient client, JsonSerializer jsonSerializer) : base(client, jsonSerializer)
         {
