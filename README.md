@@ -21,7 +21,6 @@ Library allows to call PowerApps Checker Web Api and make static analysis of pow
 ```csharp
 string tenantId = "123456b6-1234-1234-1234-123456789abc"; // tenant id
 string clientId = "12345678-1234-5678-1234-123456789abc"; // application id for registered app in portal azure
-string redrictUri = "http://localhost" // registered redirect uri for app in portal azure
 
 //using secret
 var client =  DefaultClientFactory.Instance.Create(
@@ -30,9 +29,7 @@ var client =  DefaultClientFactory.Instance.Create(
                 TenantId = tenantId,
                 ClientId = clientId,
                 Scopes = new [] { "https://api.advisor.powerapps.com//.default" },
-                RedirectUri = redrictUri,
-                Secret = "somesecret",
-                
+                Secret = "somesecret"
             });
 //using certificate
 X509Certificate2 certificate = ... // load certificate from store or file
@@ -43,9 +40,7 @@ client =  DefaultClientFactory.Instance.Create(
                 TenantId = tenantId,
                 ClientId = clientId,
                 Scopes = new [] { "https://api.advisor.powerapps.com//.default" },
-                RedirectUri = redrictUri,
-                Certificate = certificate,
-                
+                Certificate = certificate
             });
 
 //load zipped managed solution
@@ -118,7 +113,6 @@ After this you should be able to call XRM Online Management API using client cre
 ```csharp
 string tenantId = "123456b6-1234-1234-1234-123456789abc"; // tenant id
 string clientId = "12345678-1234-5678-1234-123456789abc"; // application id for registered app in portal azure
-string redrictUri = "http://localhost" // registered redirect uri for app in portal azure
 
 //using secret
 var client =  DefaultOnlineManagementApiClientFactory.Instance.Create(
@@ -127,9 +121,7 @@ var client =  DefaultOnlineManagementApiClientFactory.Instance.Create(
                 TenantId = tenantId,
                 ClientId = clientId,
                 Scopes = new [] { "https://admin.services.crm4.dynamics.com//.default" },
-                RedirectUri = redrictUri,
-                Secret = "somesecret",
-                
+                Secret = "somesecret"
             });
 //using certificate
 X509Certificate2 certificate = ... // load certificate from store or file
@@ -140,9 +132,7 @@ client =  DefaultOnlineManagementApiClientFactory.Instance.Create(
                 TenantId = tenantId,
                 ClientId = clientId,
                 Scopes = new [] { "https://admin.services.crm4.dynamics.com//.default" },
-                RedirectUri = redrictUri,
-                Certificate = certificate,
-                
+                Certificate = certificate
             });
 
  var instances = await client.GetInstances(CancellationToken.None);
