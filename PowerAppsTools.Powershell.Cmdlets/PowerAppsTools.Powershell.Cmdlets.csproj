@@ -16,6 +16,9 @@
 
   <ItemGroup>
     <PackageReference Include="PowerShellStandard.Library" Version="5.1.0" />
+    <PackageReference Include="Malaker.PowerAppsTools.Common" Version="1.0.0.3" />
+    <PackageReference Include="Malaker.PowerAppsTools.OnlineManagementApiClient" Version="1.0.0.5" />
+    <PackageReference Include="Malaker.PowerAppsTools.PowerAppAdvisorClient" Version="1.0.0.7" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PowerApps.Common\Common.csproj" />
