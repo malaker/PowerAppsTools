@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "PowerApps.Common\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineManagementApiClient", "OnlineManagementApiClient\OnlineManagementApiClient.csproj", "{803CBEFA-655B-4078-B816-AEBAEACCC500}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerAppsTools.Powershell.Cmdlets", "PowerAppsTools.Powershell.Cmdlets\PowerAppsTools.Powershell.Cmdlets.csproj", "{5F1E5DAD-FE8F-4E5D-996B-E9414C5DE5A8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerAppsTools.Powershell.Cmdlets", "PowerAppsTools.Powershell.Cmdlets\PowerAppsTools.Powershell.Cmdlets.csproj", "{76E32BCD-EB37-4FB5-A916-7D1179692BBC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +33,9 @@ Global
 		{803CBEFA-655B-4078-B816-AEBAEACCC500}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{803CBEFA-655B-4078-B816-AEBAEACCC500}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{803CBEFA-655B-4078-B816-AEBAEACCC500}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5F1E5DAD-FE8F-4E5D-996B-E9414C5DE5A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5F1E5DAD-FE8F-4E5D-996B-E9414C5DE5A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5F1E5DAD-FE8F-4E5D-996B-E9414C5DE5A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5F1E5DAD-FE8F-4E5D-996B-E9414C5DE5A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76E32BCD-EB37-4FB5-A916-7D1179692BBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76E32BCD-EB37-4FB5-A916-7D1179692BBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76E32BCD-EB37-4FB5-A916-7D1179692BBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76E32BCD-EB37-4FB5-A916-7D1179692BBC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
