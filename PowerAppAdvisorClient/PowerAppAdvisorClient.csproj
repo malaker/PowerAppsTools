@@ -4,7 +4,7 @@
     <TargetFramework>netstandard1.6</TargetFramework>
     <RootNamespace> Malaker.PowerAppsTools.PowerAppAdvisorClient</RootNamespace>
     <PackOnBuild>true</PackOnBuild>
-    <PackageVersion>1.0.0.6</PackageVersion>
+    <PackageVersion>1.0.0.7</PackageVersion>
     <Authors>Krzysztof Balcerowski</Authors>
     <Copyright>Krzysztof Balcerowski</Copyright>
     <PackageLicenseUrl>https://github.com/malaker/PowerAppsTools/blob/master/LICENSE</PackageLicenseUrl>
