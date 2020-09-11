@@ -24,6 +24,6 @@
         /// <value></value>
         public string RedirectUri { get; set; }
 
-        public string[] Scopes { get; set; }
+        public string[] Scopes { get; set; } = new [] { "https://api.advisor.powerapps.com//.default" };
     }
 }

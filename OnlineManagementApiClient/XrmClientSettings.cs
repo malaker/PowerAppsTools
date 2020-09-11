@@ -24,6 +24,6 @@ namespace Malaker.PowerAppsTools.OnlineManagementApiClient
         /// <value></value>
         public string RedirectUri { get; set; }
 
-        public string[] Scopes { get; set; }
+        public string[] Scopes { get; set; } = new [] { "https://admin.services.crm4.dynamics.com//.default" };
     }
 }

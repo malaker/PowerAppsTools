@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackOnBuild>true</PackOnBuild>
+    <PackageVersion>1.0.0.0</PackageVersion>
+    <Authors>Krzysztof Balcerowski</Authors>
+    <Copyright>Krzysztof Balcerowski</Copyright>
+    <Owners>Krzysztof Balcerowski</Owners>
+    <PackageLicenseUrl>https://github.com/malaker/PowerAppsTools/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/malaker/PowerAppsTools</PackageProjectUrl>
+    <RootNamespace>Malaker.PowerAppsTools.Powershell.Cmdlets</RootNamespace>
+    <PackageId>Malaker.PowerAppsTools.Powershell.Cmdlets</PackageId>
+    <Description>Powershell Cmdlets that makes easier to call Powerapp Advisor Checker  API and xrm online management API</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="PowerShellStandard.Library" Version="5.1.0" />
+    <PackageReference Include="Malaker.PowerAppsTools.Common" Version="1.0.0.3" />
+    <PackageReference Include="Malaker.PowerAppsTools.OnlineManagementApiClient" Version="1.0.0.5" />
+    <PackageReference Include="Malaker.PowerAppsTools.PowerAppAdvisorClient" Version="1.0.0.7" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PowerApps.Common\Common.csproj" />
+    <ProjectReference Include="..\PowerAppAdvisorClient\PowerAppAdvisorClient.csproj" />
+    <ProjectReference Include="..\OnlineManagementApiClient\OnlineManagementApiClient.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="XrmOnlineManagementApi\" />
+    <Folder Include="PowerAppAdvisor\" />
+  </ItemGroup>
+</Project>
