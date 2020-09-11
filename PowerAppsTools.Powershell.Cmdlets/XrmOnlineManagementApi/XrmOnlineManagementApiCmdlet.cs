@@ -16,6 +16,13 @@ namespace Malaker.PowerAppsTools.Powershell.Cmdlets
 
         protected override void BeginProcessing()
         {
+
+            InitializeClient();
+            base.BeginProcessing();
+        }
+
+        protected virtual void InitializeClient()
+        {
             _client = DefaultOnlineManagementApiClientFactory.Instance.Create(new XrmClientSettings()
             {
                 ClientId = this.ClientId,
@@ -24,8 +31,6 @@ namespace Malaker.PowerAppsTools.Powershell.Cmdlets
                 TenantId = this.TenantId,
                 BaseAddress = this.ApiUrl
             });
-
-            base.BeginProcessing();
         }
     }
 }

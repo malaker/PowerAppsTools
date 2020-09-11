@@ -14,6 +14,12 @@ namespace Malaker.PowerAppsTools.Powershell.Cmdlets
 
         protected override void BeginProcessing()
         {
+            InitializeClient();
+            base.BeginProcessing();
+        }
+
+        protected virtual void InitializeClient()
+        {
             _client = DefaultClientFactory.Instance.Create(new ClientSettings()
             {
                 ClientId = this.ClientId,
@@ -22,8 +28,6 @@ namespace Malaker.PowerAppsTools.Powershell.Cmdlets
                 TenantId = this.TenantId,
                 BaseAddress = this.ApiUrl
             });
-
-            base.BeginProcessing();
         }
     }
 }
