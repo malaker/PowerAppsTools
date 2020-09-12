@@ -31,7 +31,7 @@ namespace Tests.Powershell.Cmdlets.XrmOnlineManagementApi
         {
             var fixture = new Fixture();
 
-            var expectedResponse = fixture.Create<List<CurrencyResponse>>();
+            var expectedResponse = fixture.Create<IEnumerable<CurrencyResponse>>();
 
             var client = new Mock<IXrmOnlineManagementApiClient>();
 
@@ -45,7 +45,7 @@ namespace Tests.Powershell.Cmdlets.XrmOnlineManagementApi
                 TenantId = fixture.Create<string>()
             };
 
-            var results = sut.Invoke().OfType<List<CurrencyResponse>>().ToList();
+            var results = sut.Invoke().OfType<IEnumerable<CurrencyResponse>>().ToList();
 
             results.First().Should().BeEquivalentTo(expectedResponse);
         }

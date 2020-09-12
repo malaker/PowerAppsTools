@@ -11,6 +11,4 @@ namespace Malaker.PowerAppsTools.Common.Interfaces
     {
         Task<TResponse> SendAsync(TRequest request, CancellationToken cancellationToken);
     }
-
-
 }

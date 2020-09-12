@@ -28,17 +28,18 @@
             {
                 var token = _app.AcquireTokenForClient(_scopes);
 
-                _authResult = await token.ExecuteAsync();
+                _authResult = await token.ExecuteAsync().ConfigureAwait(false);
             }
 
             if (_authResult.ExpiresOn < DateTimeOffset.UtcNow)
             {
                 var token = _app.AcquireTokenForClient(_scopes);
-                _authResult = await token.ExecuteAsync();
+                
+                _authResult = await token.ExecuteAsync().ConfigureAwait(false);
             }
             request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", _authResult.AccessToken);
 
-            return await base.SendAsync(request, cancellationToken);
+            return await base.SendAsync(request, cancellationToken).ConfigureAwait(false);
         }
     }
 }

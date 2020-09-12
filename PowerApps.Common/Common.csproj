@@ -4,7 +4,7 @@
     <TargetFramework>netstandard1.6</TargetFramework>
     <RootNamespace>Malaker.PowerAppsTools.Common</RootNamespace>
     <PackageId>Malaker.PowerAppsTools.Common</PackageId>
-    <PackageVersion>1.0.0.3</PackageVersion>
+    <PackageVersion>1.0.0.4</PackageVersion>
     <Authors>Krzysztof Balcerowski</Authors>
     <Copyright>Krzysztof Balcerowski</Copyright>
     <PackageLicenseUrl>https://github.com/malaker/PowerAppsTools/blob/master/LICENSE</PackageLicenseUrl>

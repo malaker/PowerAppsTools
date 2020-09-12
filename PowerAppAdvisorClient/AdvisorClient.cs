@@ -39,9 +39,9 @@
         {
             var req = new CheckAnalysisStatus(tenantId, correlationId);
 
-            var response = await this.ExecuteAsync(req, cancellationToken);
+            var response = await this.ExecuteAsync(req, cancellationToken).ConfigureAwait(false);
 
-            string respnseMsg = await response.Content.ReadAsStringAsync();
+            string respnseMsg = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             var resp = this._jsonSerializer.Deserialize<CheckAnalysisResponse>(respnseMsg);
 
@@ -52,9 +52,9 @@
         {
             var req = new InvokeAnalysis(uploadMessageResponse.SasUriList, uploadMessageResponse.TenantId, uploadMessageResponse.CorrelationId);
 
-            var response = await this.ExecuteAsync(req, cancellationToken);
+            var response = await this.ExecuteAsync(req, cancellationToken).ConfigureAwait(false);
 
-            string respnseMsg = await response.Content.ReadAsStringAsync();
+            string respnseMsg = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             if (response.Headers.TryGetValues("Location", out IEnumerable<string> locations))
             {
@@ -71,9 +71,9 @@
         {
             var req = new UploadMessage(managedSolution, solution, tenantId, corrId);
 
-            var response = await this.ExecuteAsync(req, cancellationToken);
+            var response = await this.ExecuteAsync(req, cancellationToken).ConfigureAwait(false);
 
-            string respnseMsg = await response.Content.ReadAsStringAsync();
+            string respnseMsg = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             var resp = this._jsonSerializer.Deserialize<string[]>(respnseMsg);
 

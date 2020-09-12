@@ -5,7 +5,7 @@ namespace Malaker.PowerAppsTools.OnlineManagementApiClient.Requests
 {
     using Models;
 
-    public class GetCurrencies : OnlineManagementApiRequest<List<CurrencyResponse>>
+    public class GetCurrencies : OnlineManagementApiRequest<IEnumerable<CurrencyResponse>>
     {
         public override HttpMethod Method => HttpMethod.Get;
 

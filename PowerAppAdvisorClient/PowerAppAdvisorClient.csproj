@@ -4,7 +4,7 @@
     <TargetFramework>netstandard1.6</TargetFramework>
     <RootNamespace> Malaker.PowerAppsTools.PowerAppAdvisorClient</RootNamespace>
     <PackOnBuild>true</PackOnBuild>
-    <PackageVersion>1.0.0.7</PackageVersion>
+    <PackageVersion>1.0.0.8</PackageVersion>
     <Authors>Krzysztof Balcerowski</Authors>
     <Copyright>Krzysztof Balcerowski</Copyright>
     <PackageLicenseUrl>https://github.com/malaker/PowerAppsTools/blob/master/LICENSE</PackageLicenseUrl>
@@ -20,7 +20,7 @@ For teams who are in need of automation CI/CD pipeline introducing static analys
   <ItemGroup>
     <PackageReference Include="Microsoft.Identity.Client" Version="4.17.1" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="Malaker.PowerAppsTools.Common" Version="1.0.0.3" />
+    <PackageReference Include="Malaker.PowerAppsTools.Common" Version="1.0.0.4" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />

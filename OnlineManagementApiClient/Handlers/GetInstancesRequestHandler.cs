@@ -7,7 +7,7 @@ namespace Malaker.PowerAppsTools.OnlineManagementApiClient.Handlers
     using Requests;
     using Models;
 
-    public class GetInstancesRequestHandler : OnlineManagementApiClientRequestHandler<GetInstances, List<Instance>>
+    public class GetInstancesRequestHandler : OnlineManagementApiClientRequestHandler<GetInstances, IEnumerable<Instance>>
     {
         public GetInstancesRequestHandler(HttpClient client, JsonSerializer jsonSerializer) : base(client, jsonSerializer)
         {

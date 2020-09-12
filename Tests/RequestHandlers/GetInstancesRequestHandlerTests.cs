@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Tests.RequestHandlers
 {
-    public class GetInstancesRequestHandlerTests : RequestHandlerTests<GetInstancesRequestHandler, GetInstances, List<Instance>>
+    public class GetInstancesRequestHandlerTests : RequestHandlerTests<GetInstancesRequestHandler, GetInstances, IEnumerable<Instance>>
     {
     }
 }

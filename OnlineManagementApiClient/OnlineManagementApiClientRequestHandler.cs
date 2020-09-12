@@ -18,8 +18,8 @@ namespace Malaker.PowerAppsTools.OnlineManagementApiClient
 
         public async virtual Task<TResponse> SendAsync(TRequest request, CancellationToken cancellationToken)
         {
-            HttpResponseMessage response = await this.ExecuteAsync(request, cancellationToken);
-            return _jsonSerializer.Deserialize<TResponse>(await response.Content.ReadAsStringAsync());
+            HttpResponseMessage response = await this.ExecuteAsync(request, cancellationToken).ConfigureAwait(false);
+            return _jsonSerializer.Deserialize<TResponse>(await response.Content.ReadAsStringAsync().ConfigureAwait(false));
         }
     }
 
@@ -35,11 +35,11 @@ namespace Malaker.PowerAppsTools.OnlineManagementApiClient
         {
             try
             {
-                return await base.SendAsync(request, cancellationToken);
+                return await base.SendAsync(request, cancellationToken).ConfigureAwait(false);
             }
             catch (ApiCallFailedException ex)
             {
-                string content = await ex.HttpResponseMessage.Content.ReadAsStringAsync();
+                string content = await ex.HttpResponseMessage.Content.ReadAsStringAsync().ConfigureAwait(false);
                 return this._jsonSerializer.Deserialize<OperationStatus>(content);
             }
         }
