@@ -23,8 +23,7 @@ namespace Malaker.PowerAppsTools.Powershell.Cmdlets
         [ValidateNotNullOrEmpty()]
         public string SolutionName { get; set; }
 
-
-        protected override void ProcessRecord()
+        protected virtual byte[] LoadSolution(string path)
         {
             byte[] managedSolution = null;
 
@@ -37,11 +36,15 @@ namespace Malaker.PowerAppsTools.Powershell.Cmdlets
                     managedSolution = ms.ToArray();
                 }
             }
+            return managedSolution;
+        }
 
-            var result = _client.UploadSolution(managedSolution, SolutionName, TenantId, Guid.NewGuid(), CancellationToken.None).ConfigureAwait(false).GetAwaiter().GetResult();
+
+        protected override void ProcessRecord()
+        {
+            var result = _client.UploadSolution(LoadSolution(FullPath), SolutionName, TenantId, Guid.NewGuid(), CancellationToken.None).ConfigureAwait(false).GetAwaiter().GetResult();
 
             WriteObject(result);
-
         }
     }
 }
