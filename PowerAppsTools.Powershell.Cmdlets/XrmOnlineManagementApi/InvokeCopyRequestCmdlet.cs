@@ -4,12 +4,11 @@ namespace Malaker.PowerAppsTools.Powershell.Cmdlets
 {
     using OnlineManagementApiClient.Requests;
     using System.Threading;
-    using Malaker.PowerAppsTools.OnlineManagementApiClient;
     using OnlineManagementApiClient.Models;
 
     [Cmdlet(VerbsLifecycle.Invoke, "CopyRequest")]
     [OutputType(typeof(OperationStatus))]
-    public class IvokeCopyRequestCmdlet : XrmOnlineManagementApiCmdlet
+    public class InvokeCopyRequestCmdlet : XrmOnlineManagementApiCmdlet
     {
         [Parameter(Mandatory = true)]
         [Alias("TargetInstance")]
