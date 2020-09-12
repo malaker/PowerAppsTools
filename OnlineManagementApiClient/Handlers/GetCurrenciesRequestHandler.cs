@@ -7,7 +7,7 @@ namespace Malaker.PowerAppsTools.OnlineManagementApiClient.Handlers
     using Requests;
     using Models;
 
-    public class GetCurrenciesRequestHandler : OnlineManagementApiClientRequestHandler<GetCurrencies, List<CurrencyResponse>>
+    public class GetCurrenciesRequestHandler : OnlineManagementApiClientRequestHandler<GetCurrencies, IEnumerable<CurrencyResponse>>
     {
         public GetCurrenciesRequestHandler(HttpClient client, JsonSerializer jsonSerializer) : base(client, jsonSerializer)
         {

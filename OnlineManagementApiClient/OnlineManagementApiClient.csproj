@@ -9,7 +9,7 @@
     <RootNamespace>Malaker.PowerAppsTools.OnlineManagementApiClient</RootNamespace>
     <PackOnBuild>true</PackOnBuild>
     <PackageId>Malaker.PowerAppsTools.OnlineManagementApiClient</PackageId>
-    <PackageVersion>1.0.0.5</PackageVersion>
+    <PackageVersion>1.0.0.6</PackageVersion>
     <Authors>Krzysztof Balcerowski</Authors>
     <Copyright>Krzysztof Balcerowski</Copyright>
     <PackageLicenseUrl>https://github.com/malaker/PowerAppsTools/blob/master/LICENSE</PackageLicenseUrl>
@@ -21,7 +21,7 @@ This library allows to call REST API of Online Management API with client creden
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Malaker.PowerAppsTools.Common" Version="1.0.0.3" />
+    <PackageReference Include="Malaker.PowerAppsTools.Common" Version="1.0.0.4" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
 

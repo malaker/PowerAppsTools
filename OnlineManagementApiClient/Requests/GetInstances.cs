@@ -6,7 +6,7 @@ namespace Malaker.PowerAppsTools.OnlineManagementApiClient.Requests
     using Common.Interfaces;
     using System.Net.Http;
 
-    public class GetInstances : OnlineManagementApiRequest<List<Instance>>
+    public class GetInstances : OnlineManagementApiRequest<IEnumerable<Instance>>
     {
         public override HttpMethod Method => HttpMethod.Get;
 

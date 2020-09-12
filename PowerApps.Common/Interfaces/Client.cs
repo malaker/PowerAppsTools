@@ -28,11 +28,11 @@
 
         protected virtual async Task<HttpResponseMessage> ExecuteAsync(PowerAppRequest request, CancellationToken cancellationToken)
         {
-            var response = await this._httpCLient.SendAsync(this.GetHttpMessageRequest(request), cancellationToken);
+            var response = await this._httpCLient.SendAsync(this.GetHttpMessageRequest(request), cancellationToken).ConfigureAwait(false);
 
             if (!response.IsSuccessStatusCode)
             {
-                string content = await response?.Content.ReadAsStringAsync() ?? string.Empty;
+                string content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
                 
                 throw new ApiCallFailedException($"{(int)response.StatusCode}-{response.StatusCode.ToString()} - content - {content} - reason {response.ReasonPhrase}",response);
             }

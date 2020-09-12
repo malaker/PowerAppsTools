@@ -9,9 +9,9 @@
     {
         private AbstractConfidentialClientAcquireTokenParameterBuilder<AcquireTokenForClientParameterBuilder> _builder;
 
-        public Task<AuthenticationResult> ExecuteAsync()
+        public async Task<AuthenticationResult> ExecuteAsync()
         {
-            return this._builder.ExecuteAsync();
+            return await this._builder.ExecuteAsync().ConfigureAwait(false);
         }
 
         public void Set(AbstractConfidentialClientAcquireTokenParameterBuilder<AcquireTokenForClientParameterBuilder> acquireTokenForClientParameterBuilder)

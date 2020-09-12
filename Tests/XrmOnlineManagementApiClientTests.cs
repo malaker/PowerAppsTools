@@ -58,8 +58,8 @@ namespace Tests
         public async Task ShouldCallGetCurrenciesRequestHandler()
         {
             //Arrange
-            var handlerMock = new Mock<IRequestHandler<GetCurrencies,  List<CurrencyResponse>>>();
-            var expectedResponse = fixture.Create<List<CurrencyResponse>>();
+            var handlerMock = new Mock<IRequestHandler<GetCurrencies,  IEnumerable<CurrencyResponse>>>();
+            var expectedResponse = fixture.Create<IEnumerable<CurrencyResponse>>();
             handlerMock.Setup(m=>m.SendAsync(It.IsAny<GetCurrencies>(),It.IsAny<CancellationToken>())).Returns(Task.FromResult(expectedResponse));
             var sut = new XrmOnlineManagementApiClient(new List<IPowerAppRequestHandler>(){handlerMock.Object});
             //Act
@@ -87,8 +87,8 @@ namespace Tests
         public async Task ShouldCallGetInstancesRequestHandler()
         {
             //Arrange
-            var handlerMock = new Mock<IRequestHandler<GetInstances, List<Instance>>>();
-            var expectedResponse = fixture.Create<List<Instance>>();
+            var handlerMock = new Mock<IRequestHandler<GetInstances, IEnumerable<Instance>>>();
+            var expectedResponse = fixture.Create<IEnumerable<Instance>>();
             handlerMock.Setup(m=>m.SendAsync(It.IsAny<GetInstances>(),It.IsAny<CancellationToken>())).Returns(Task.FromResult(expectedResponse));
             var sut = new XrmOnlineManagementApiClient(new List<IPowerAppRequestHandler>(){handlerMock.Object});
             //Act

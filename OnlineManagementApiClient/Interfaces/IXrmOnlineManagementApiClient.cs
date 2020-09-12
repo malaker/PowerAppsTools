@@ -11,7 +11,7 @@ namespace Malaker.PowerAppsTools.OnlineManagementApiClient.Interfaces
     {
         Task<IEnumerable<Instance>> GetInstances(CancellationToken cancellationToken);
 
-        Task<List<CurrencyResponse>> GetCurrencies(CancellationToken cancellationToken);
+        Task<IEnumerable<CurrencyResponse>> GetCurrencies(CancellationToken cancellationToken);
 
         Task<OperationStatus> CopyEnvironment(CopyRequest request, CancellationToken cancellationToken);
 

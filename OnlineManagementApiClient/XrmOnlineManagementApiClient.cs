@@ -21,49 +21,49 @@ namespace Malaker.PowerAppsTools.OnlineManagementApiClient
 
         public async Task<OperationStatus> BackupInstance(BackupInstanceRequest request, CancellationToken cancellationToken)
         {
-            var response = await this._handlers.OfType<IRequestHandler<BackupInstanceRequest, OperationStatus>>().FirstOrDefault().SendAsync(request, cancellationToken);
+            var response = await this._handlers.OfType<IRequestHandler<BackupInstanceRequest, OperationStatus>>().FirstOrDefault().SendAsync(request, cancellationToken).ConfigureAwait(false);
             return response;
         }
 
         public async Task<OperationStatus> CopyEnvironment(CopyRequest request, CancellationToken cancellationToken)
         {
-            var response = await this._handlers.OfType<IRequestHandler<CopyRequest, OperationStatus>>().FirstOrDefault().SendAsync(request, cancellationToken);
+            var response = await this._handlers.OfType<IRequestHandler<CopyRequest, OperationStatus>>().FirstOrDefault().SendAsync(request, cancellationToken).ConfigureAwait(false);
             return response;
         }
 
-        public async Task<List<CurrencyResponse>> GetCurrencies(CancellationToken cancellationToken)
+        public async Task<IEnumerable<CurrencyResponse>> GetCurrencies(CancellationToken cancellationToken)
         {
-            var response = await this._handlers.OfType<IRequestHandler<GetCurrencies, List<CurrencyResponse>>>().FirstOrDefault().SendAsync(new GetCurrencies(), cancellationToken);
+            var response = await this._handlers.OfType<IRequestHandler<GetCurrencies, IEnumerable<CurrencyResponse>>>().FirstOrDefault().SendAsync(new GetCurrencies(), cancellationToken).ConfigureAwait(false);
             return response;
         }
 
         public async Task<GetInstanceBackupsResponse> GetInstanceBackups(GetInstanceBackups request, CancellationToken cancellationToken)
         {
-            var response = await this._handlers.OfType<IRequestHandler<GetInstanceBackups, GetInstanceBackupsResponse>>().FirstOrDefault().SendAsync(request, cancellationToken);
+            var response = await this._handlers.OfType<IRequestHandler<GetInstanceBackups, GetInstanceBackupsResponse>>().FirstOrDefault().SendAsync(request, cancellationToken).ConfigureAwait(false);
             return response;
         }
 
         public async Task<IEnumerable<Instance>> GetInstances(CancellationToken cancellationToken)
         {
-            var response = await this._handlers.OfType<IRequestHandler<GetInstances, List<Instance>>>().FirstOrDefault().SendAsync(new GetInstances(), cancellationToken);
+            var response = await this._handlers.OfType<IRequestHandler<GetInstances, IEnumerable<Instance>>>().FirstOrDefault().SendAsync(new GetInstances(), cancellationToken).ConfigureAwait(false);
             return response;
         }
 
         public async Task<OperationStatus> GetOperationStatus(string operationId, CancellationToken cancellationToken)
         {
-            var response = await this._handlers.OfType<IRequestHandler<GetOperationStatus, OperationStatus>>().FirstOrDefault().SendAsync(new GetOperationStatus(operationId), cancellationToken);
+            var response = await this._handlers.OfType<IRequestHandler<GetOperationStatus, OperationStatus>>().FirstOrDefault().SendAsync(new GetOperationStatus(operationId), cancellationToken).ConfigureAwait(false);
             return response;
         }
 
         public async Task<OperationStatus> ResetInstance(ResetInstanceRequest request, CancellationToken cancellationToken)
         {
-            var response = await this._handlers.OfType<IRequestHandler<ResetInstanceRequest, OperationStatus>>().FirstOrDefault().SendAsync(request, cancellationToken);
+            var response = await this._handlers.OfType<IRequestHandler<ResetInstanceRequest, OperationStatus>>().FirstOrDefault().SendAsync(request, cancellationToken).ConfigureAwait(false);
             return response;
         }
 
         public async Task<OperationStatus> RestoreInstance(RestoreInstanceRequest request, CancellationToken cancellationToken)
         {
-            var response = await this._handlers.OfType<IRequestHandler<RestoreInstanceRequest, OperationStatus>>().FirstOrDefault().SendAsync(request, cancellationToken);
+            var response = await this._handlers.OfType<IRequestHandler<RestoreInstanceRequest, OperationStatus>>().FirstOrDefault().SendAsync(request, cancellationToken).ConfigureAwait(false);
             return response;
         }
     }

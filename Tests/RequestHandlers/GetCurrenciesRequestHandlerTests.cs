@@ -5,7 +5,7 @@ using Malaker.PowerAppsTools.OnlineManagementApiClient.Requests;
 
 namespace Tests.RequestHandlers
 {
-    public class GetCurrenciesRequestHandlerTests : RequestHandlerTests<GetCurrenciesRequestHandler, GetCurrencies, List<CurrencyResponse>>
+    public class GetCurrenciesRequestHandlerTests : RequestHandlerTests<GetCurrenciesRequestHandler, GetCurrencies, IEnumerable<CurrencyResponse>>
     {
 
     }

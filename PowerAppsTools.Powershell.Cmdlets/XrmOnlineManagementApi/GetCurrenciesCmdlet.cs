@@ -10,7 +10,7 @@ namespace Malaker.PowerAppsTools.Powershell.Cmdlets
 
 
     [Cmdlet(VerbsCommon.Get, "Currencies")]
-    [OutputType(typeof(List<CurrencyResponse>))]
+    [OutputType(typeof(IEnumerable<CurrencyResponse>))]
     public class GetCurrenciesCmdlet : XrmOnlineManagementApiCmdlet
     {
         protected override void ProcessRecord()
